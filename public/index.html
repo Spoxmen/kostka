@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("p").append(" <b>Zadziałało!!!</b>.");
+	  });
+  });
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.post("demo_test_post.asp",
+    {
+      name: "Donald Duck",
+      city: "Duckburg"
+    },
+    function(data,status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+  <h1>Express</h1>
+    <button id="btn1">Append text</button>
+  <p>Welcome to Express</p>
+
+<button>Send an HTTP POST request to a page and get the result back</button>
+
+  
+</body>
+
+</html>
