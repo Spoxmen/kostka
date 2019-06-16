@@ -11,7 +11,7 @@ var port = 3000
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -20,4 +20,12 @@ app.use('/users', usersRouter);
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.post('/', function (req, res, next) {
+    var dane = req.body
+    console.log(dane.name);
+    console.log(dane.city);
+    res.send('everything fine')
+})
+
 module.exports = app;
