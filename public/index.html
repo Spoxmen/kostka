@@ -1,40 +1,25 @@
 <html>
-
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script>
-$(document).ready(function(){
-  $("#btn1").click(function(){
-    $("p").append(" <b>Zadziałało!!!</b>.");
-	  });
-  });
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.post("demo_test_post.asp",
+    $.post("http://localhost:3000",
     {
-      name: "Donald Duck",
-      city: "Duckburg"
+      "ST": $("#test").val(),
+      "IK": $("#test1").val()
     },
-    function(data,status){
-      alert("Data: " + data + "\nStatus: " + status);
+    function(response){
+      alert(response);
     });
   });
 });
 </script>
 </head>
-
 <body>
-  <h1>Express</h1>
-    <button id="btn1">Append text</button>
-  <p>Welcome to Express</p>
+    <p>Stopień Trudności: <input type="text" id="test" value="0"></p>  
+    <p>Ilość kostek: <input type="text" id="test1" value="0"></p>
+    <button>Rzuć</button>
 
-<button>Send an HTTP POST request to a page and get the result back</button>
-
-  
 </body>
-
 </html>
