@@ -29,6 +29,8 @@ app.post('/', function (req, res, next) {
     console.log(dane.ST);
     console.log(dane.IK);
 
+    ilosc_rzutow=dane.IK
+
     var ilosc_sukcesow=0;
     var ilosc_przerzutow=0;
 
@@ -37,8 +39,8 @@ app.post('/', function (req, res, next) {
             if(wynik>=dane.ST){
                 ilosc_sukcesow=ilosc_sukcesow+1
             if(wynik==10){
-                ilosc_rzutow++
-                ilosc_przerzutow++
+                ilosc_rzutow = ilosc_rzutow+1
+                ilosc_przerzutow=ilosc_przerzutow+1
             }
             }
     }
