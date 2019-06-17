@@ -50,5 +50,3 @@ app.post('/', function (req, res, next) {
 
 module.exports = app;
 module.exports = app;
-
-app.listen(PORT, () => console.log(`Example app listening on port ${port}!`))
