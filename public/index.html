@@ -10,7 +10,7 @@ $(document).ready(function(){
       "IK": $("#test1").val()
     },
     function(response){
-      alert(response);
+      $("p1").append(response);
     });
   });
 });
@@ -19,7 +19,8 @@ $(document).ready(function(){
 <body>
     <p>Stopień Trudności: <input type="text" id="test" value="0"></p>  
     <p>Ilość kostek: <input type="text" id="test1" value="0"></p>
-    <button>Rzuć</button>
+    <button>Rzuć</button><br>
+    <p1> </p1>
 
 </body>
 </html>
