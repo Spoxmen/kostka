@@ -1,16 +1,25 @@
 <html>
-
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.post("http://localhost:3000",
+    {
+      "ST": $("#test").val(),
+      "IK": $("#test1").val()
+    },
+    function(response){
+      alert(response);
+    });
+  });
+});
+</script>
 </head>
-
 <body>
-  <form action = "http://127.0.0.1:8081/process_post" method = "POST">
-    First Name: <input type = "text" name = "first_name"> <br>
-    Last Name: <input type = "text" name = "last_name">
-    <input type = "submit" value = "Submit">
- </form>
-</body>
+    <p>Stopień Trudności: <input type="text" id="test" value="0"></p>  
+    <p>Ilość kostek: <input type="text" id="test1" value="0"></p>
+    <button>Rzuć</button>
 
+</body>
 </html>
