@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
+var port = 3000
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -23,7 +23,7 @@ app.use('/users', usersRouter);
 
 
 
-
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 app.post('/', function (req, res, next) {
     var dane = req.body
     console.log(dane.ST);
@@ -51,10 +51,4 @@ app.post('/', function (req, res, next) {
 module.exports = app;
 module.exports = app;
 
-<<<<<<< HEAD
-var PORT = process.env.PORT || 3000;
-=======
-var PORT = process.env.PORT || 8000;
->>>>>>> dev1
-var server=app.listen(PORT,function() {});
 app.listen(PORT, () => console.log(`Example app listening on port ${port}!`))
