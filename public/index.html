@@ -4,7 +4,7 @@
 <script>
     $(document).ready(function(){
       $("#rd1").click(function(){
-          $("p2").text("system narracyjny w wersji Classic WOD, ustal stopień trudności od 2 do 10 i wybierz ilość kości");
+          $("p2").text("system narracyjny w wersji Classic WOD, ustal stopień trudności od 2 do 10 i wybierz ilość kości oraz ustal czy system ma uwzględniać wynik w postaci jedynki jako pech i zmniejszac ilość sukcesów");
           $("#test").removeAttr("readonly");
           $("#test").val("0");
           $("#test1").val("0");
@@ -12,7 +12,7 @@
           
       })
       $("#rd2").click(function(){
-          $("p2").text("system narracyjny w wersji New WOD(CotD)");
+          $("p2").text("system narracyjny w wersji New WOD(CotD). Oznacza to stały stopień trudności o wartości 8 i brak jedynki jako pecha");
           $("#test").val("8");
           $("#test1").val("0");
           $("#test").attr("readonly", true);
@@ -41,16 +41,23 @@
 </script>
 </head>
 <body>
+    Aplikacja służy do symulacji mechaniki używanej w systemie RPG World of Darkness. <br>
+    Mechanika używa kości dziesięciościennych aby określić czy graczowi udało się osiągnąć sukces w rzucie czy nie.<br>
+    Sukces polega na wyrzuceniu na wskazanej ilości kości wyników większych lub równych wskazanemu Stopniowi Trudności.<br>
+    Ilość sukcesów określa jak bardzo udała się akcja, którą deklarował gracz. <br>
+    Mechanika ta ma różne wersje i możliwość dalszego skomplikowania rzutu. Część tych opcji została zaimplementowana w aplikacji<br>
+    <br>  
+  
     <b>Wybierz wersję mechaniki:</b><br>
 
     <form>
     <input id="rd1" type="radio" name="nazwa" value="wartość" checked>Mechanika oWOD<br>
     <input id="rd2" type="radio" name="nazwa" value="wartość1">Mechanika nWOD<br>
     </form>
-    Wybrana mechanika to: <p2> </p2><br>
+    Wybrana mechanika to: <p2>system narracyjny w wersji Classic WOD, ustal stopień trudności od 2 do 10 i wybierz ilość kości oraz ustal czy system ma uwzględniać wynik w postaci jedynki jako pech i zmniejszać ilość sukcesów</p2><br><br>
     <form>
         <select id="jedynki">
-          <option value="1" id="jedynki1">Uwzględniaj wynik "1" jako "pech"</option>
+          <option value="1" id="jedynki1">Uwzględniaj wynik "1" jako "pech"(będzie odejmowany od puli sukcesów)</option>
           <option value="2" id="jedynki2">Nie uwzględniaj wyniku "1"</option>
         </select>
     </form>
