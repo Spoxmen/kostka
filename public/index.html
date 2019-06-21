@@ -3,24 +3,41 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("button").click(function(){
+  $("#btn1").click(function(){
     $.post("/",
     {
       "ST": $("#test").val(),
       "IK": $("#test1").val()
     },
     function(response){
-      $("p1").text(response);
+      $("p1").text(response.);
     });
   });
+  $("#rd1").click(function(){
+      var wynik =  1 + Math.floor(Math.random() * 10);
+      $("p2").text("system narracyjny w wersji Old World of Darkness, ustal stopień trudności od 2 do 10 i wybierz ilość kości");
+    })
+    $("#rd2").click(function(){
+      var wynik =  1 + Math.floor(Math.random() * 10);
+      $("p2").text("system narracyjny w wersji Nowego Świata Mroku, nie zmieniaj już stopnia trudności");
+      $("#test").val("8")
+    })
 });
 </script>
+
 </head>
 <body>
-    <p>Stopień Trudności: <input type="text" id="test" value="0"></p>  
-    <p>Ilość kostek: <input type="text" id="test1" value="0"></p>
-    <button>Rzuć</button><br>
-    <p1>Oczekiwanie na uruchomienie testu</p1>
+    <b>Wybierz wersję mechaniki:</b><br>
+
+    <form action="...">
+    <input id="rd1" type="radio" name="nazwa" value="wartość">Mechanika oWOD<br>
+    <input id="rd2" type="radio" name="nazwa" value="wartość1">Mechanika nWOD<br>
+    </form>
+    <p id="ST1">Stopień Trudności: <input type="text" id="test" value="0"></p>  
+    <p id="IK1">Ilość kostek: <input type="text" id="test1" value="0"></p>
+    <button id="btn1">Rzuć</button><br>
+    <p1>Oczekiwanie na uruchomienie testu</p1><br>
+    Wybrana mechanika to: <p2> </p2>
 
 </body>
 </html>
