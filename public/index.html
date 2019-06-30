@@ -35,7 +35,6 @@
 </script>
 <script>
   $(document).ready(function(){
-
     $("#btn1").click(function(){
       $.post("/",
         {
@@ -49,15 +48,34 @@
     })
   })
 </script>
+<style>
+.column {
+  float: left;
+  width: 32%;
+  padding: 15px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
 </head>
 <body bgcolor="blue">
-    <h1 align="center">Dice Roller 1.0-rc</h1>
-    <div align="center">
+    <h1 align="center">Dice Roller 1.0-rc</h1><br>
+    <div class="row">
+    <div style="height: 100%; background-color: honeydew" class="column"></div>
+    <div style="background-color:grey; height: 100%" class="column">
         <button id="btn2">Show description</button>
         <button id="btn3">Hide description</button>
-    </div>
+    
 
-    <div id="header" hidden align="center">
+    <p id="header" hidden>
         This application simulates dice roll and compares with given value. <br>
         If the value is higher or equal with given value(difficulty), application returns success.<br>
         User can decide if he wants to simulate rolls with constant or changing difficulty<br>
@@ -66,8 +84,8 @@
         When rolling is finished, application returns total numbers of successes and rerolls.<br>
         User can decide whether to use option with substracting successes(when result is "1") or not. 
         <br>  
-    </div> 
-    <div align="center">
+    </p> 
+    <p>
         <b>Choose system version:</b><br>
 
         <form>
@@ -85,8 +103,10 @@
         <p id="IK1">Number of dices: <input type="text" id="test1" value="0"></p>
         <button id="btn1">ROLL</button><br>
         <p1 id="wynik">Ready to present results</p1><br>
+        </p>
     </div>
-
+    <div style="height: 100%; background-color: hotpink" class="column"></div>
+  </div>
     
 
 </body>
